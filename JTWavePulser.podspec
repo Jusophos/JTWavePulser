@@ -21,9 +21,11 @@ Pod::Spec.new do |s|
 
   s.description  = <<-DESC
                    Enables the possibility to add pulsing wave animations to an view.
+
+                   For questions ask Richard under r.jung@jungit.com
                    DESC
 
-  s.homepage     = "http://www.jungit.com/JTWavePulser"
+  s.homepage     = "https://github.com/Jusophos/JTWavePulser"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
