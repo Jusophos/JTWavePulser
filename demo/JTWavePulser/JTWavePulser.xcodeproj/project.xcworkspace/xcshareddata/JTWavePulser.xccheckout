@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>EDAF5F91-1CFB-4935-A2DD-3B7F1B3A263E</string>
+	<key>IDESourceControlProjectName</key>
+	<string>JTWavePulser</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>54820B98-A490-4B78-8AD0-91F14C75D48F</key>
+		<string>ssh://github.com/Jusophos/JTWavePulser.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>demo/JTWavePulser/JTWavePulser.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>54820B98-A490-4B78-8AD0-91F14C75D48F</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/Jusophos/JTWavePulser.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>54820B98-A490-4B78-8AD0-91F14C75D48F</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>54820B98-A490-4B78-8AD0-91F14C75D48F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>JTWavePulser</string>
+		</dict>
+	</array>
+</dict>
+</plist>

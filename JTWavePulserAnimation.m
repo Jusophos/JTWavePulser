@@ -14,6 +14,8 @@
 @property (assign, readwrite) BOOL wantToStop;
 @property (assign, readwrite) BOOL isPulsing;
 
+@property (nonatomic, strong) NSMutableArray *pulseViews;
+
 @end
 
 @implementation JTWavePulserAnimation
@@ -42,6 +44,8 @@
         self.pulseRingBackgroundColor = [UIColor clearColor];
         self.pulseAnimationDuration = 1.0f;
         self.pulseAnimationInterval = 1.0f;
+        self.pulseRingInitialAlpha = 1.0f;
+        self.pulseViews = [NSMutableArray array];
     }
     
     return self;
@@ -72,6 +76,21 @@
     self.wantToStop = YES;
 }
 
+- (void)stopPulsingInstantly {
+    
+    if (!self.isPulsing) {
+        
+        return;
+    }
+    
+    self.wantToStop = YES;
+        
+    for (UIView *view in self.pulseViews) {
+        
+        [view removeFromSuperview];
+    }
+}
+
 #pragma mark - Helpers
 - (void)checkTimer {
     
@@ -97,6 +116,7 @@
     
     __block UIView *pulseRingView = [self createPulseRing];
     
+    [self.pulseViews addObject:pulseRingView];
     [self.baseView addSubview:pulseRingView];
     
     [UIView animateWithDuration:self.pulseAnimationDuration delay:0.0f options:UIViewAnimationOptionCurveLinear animations:^{
@@ -106,6 +126,7 @@
         
     } completion:^(BOOL completed) {
         
+        [self.pulseViews removeObject:pulseRingView];
         [pulseRingView removeFromSuperview];
         pulseRingView = nil;
     }];
@@ -119,6 +140,7 @@
     pulseRingView.layer.borderWidth = self.pulseRingWidth;
     pulseRingView.layer.borderColor = [self.pulseRingColor CGColor];
     pulseRingView.layer.backgroundColor = [self.pulseRingBackgroundColor CGColor];
+    pulseRingView.alpha = self.pulseRingInitialAlpha;
     
     return pulseRingView;
 }

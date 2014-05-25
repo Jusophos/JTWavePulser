@@ -17,6 +17,7 @@
 @property (nonatomic, strong) UIColor *pulseRingColor;
 @property (nonatomic, strong) UIColor *pulseRingBackgroundColor;
 @property (assign) float pulseRingScale;
+@property (assign) float pulseRingInitialAlpha;
 @property (assign) int pulseAnimationDuration;
 @property (assign) float pulseAnimationInterval;
 
@@ -26,5 +27,6 @@
 #pragma mark - Pulsing
 - (void)startPulsing;
 - (void)stopPulsing;
+- (void)stopPulsingInstantly;
 
 @end
