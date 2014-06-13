@@ -9,14 +9,19 @@
 
 #import "JTWavePulserAnimation.h"
 
-@interface JTWavePulser : NSObject
+@interface JTWavePulser : NSObject {
+    
+    
+}
 
+@property (assign) NSUInteger keyCounter;
 @property (nonatomic, strong) NSMutableDictionary *animations;
 
 #pragma mark - Access management
 + (JTWavePulser *)shared;
 
 #pragma mark - Animation management
++ (JTWavePulserAnimation *)animationWithView:(UIView *)view;
 + (JTWavePulserAnimation *)animationWithView:(UIView *)view forKey:(NSString *)key;
 
 #pragma mark - Actions

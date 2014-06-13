@@ -23,6 +23,15 @@ static JTWavePulser *sharedWavePulserInstance = nil;
 }
 
 #pragma marl - Animation management
++ (JTWavePulserAnimation *)animationWithView:(UIView *)view {
+    
+    JTWavePulser *pulser = [JTWavePulser shared];
+    pulser.keyCounter++;
+    JTWavePulserAnimation *animation = [pulser animationForView:view forKey:[NSString stringWithFormat:@"anim_%d", pulser.keyCounter]];
+    
+    return animation;
+}
+
 + (JTWavePulserAnimation *)animationWithView:(UIView *)view forKey:(NSString *)key {
  
     JTWavePulser *pulser = [JTWavePulser shared];

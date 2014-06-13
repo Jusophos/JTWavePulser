@@ -83,7 +83,7 @@
             
         } else {
             
-            [animation stopPulsingInstantly];
+            [animation stopPulsing];
         }
     }
     
