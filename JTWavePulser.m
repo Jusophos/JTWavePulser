@@ -4,6 +4,7 @@
 //  Created by Richard Jung on 24.05.14.
 //  Copyright (c) 2014 Jung IT COM KG. All rights reserved.
 //
+//
 
 #import "JTWavePulser.h"
 
