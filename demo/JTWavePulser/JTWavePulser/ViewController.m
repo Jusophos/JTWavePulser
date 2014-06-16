@@ -60,6 +60,9 @@
         animation.pulseAnimationInterval = 0.25f;
         animation.pulseRingInitialAlpha = 0.5;
     }
+    
+    JTWavePulserAnimation *animation = [JTWavePulser animationWithView:self.red1 forKey:@"view_1"];
+    [animation pulseXTimes:5];
 }
 
 - (void)didReceiveMemoryWarning

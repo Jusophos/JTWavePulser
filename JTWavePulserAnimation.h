@@ -28,5 +28,6 @@
 - (void)startPulsing;
 - (void)stopPulsing;
 - (void)stopPulsingInstantly;
+- (void)pulseXTimes:(int)times;
 
 @end

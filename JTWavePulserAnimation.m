@@ -14,6 +14,9 @@
 @property (assign, readwrite) BOOL wantToStop;
 @property (assign, readwrite) BOOL isPulsing;
 
+@property (assign, readwrite) int pulsingCount;
+@property (assign, readwrite) int pulsingMaxCount;
+
 @property (nonatomic, strong) NSMutableArray *pulseViews;
 
 @end
@@ -54,16 +57,28 @@
 #pragma mark - Pulsing
 - (void)startPulsing {
     
+    [self startPulsingXTimes:-1];
+}
+
+- (void)startPulsingXTimes:(int)times {
+    
     if (self.isPulsing) {
         
         return;
     }
     
+    self.pulsingCount = 1;
+    self.pulsingMaxCount = times;
     self.wantToStop = NO;
     self.isPulsing = YES;
-
+    
     [self pulseRing];
     [self checkTimer];
+}
+
+- (void)pulseXTimes:(int)times {
+    
+    [self startPulsingXTimes:times];
 }
 
 - (void)stopPulsing {
@@ -103,10 +118,19 @@
             return;
         }
         
+        if (self.pulsingMaxCount != -1 && self.pulsingCount >= self.pulsingMaxCount) {
+            
+            self.isPulsing = NO;
+            return;
+        }
+        
         dispatch_async(dispatch_get_main_queue(), ^{
             
             [self pulseRing];
         });
+        
+        self.pulsingCount++;        
+
         
         [self checkTimer];
     });
